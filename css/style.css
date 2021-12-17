@@ -3,3 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.list-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.container-todo {
+    list-style-type: none;
+}
+
+.container-todo li {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border: 1px solid red;
+}
+
+.lined {
+    text-decoration: line-through;
+}
