@@ -48,6 +48,11 @@ const app = new Vue ({
                 done: false
             });
             this.inputValue = null;
+        },
+        removeItem: function (index) {
+            const element = this.todos[index];
+            const position = this.todos.indexOf(element);
+            this.todos.splice(position, 1);
         }
     }
 });

@@ -19,12 +19,17 @@
             <div class="input">
                 <label for="input-todo"> Inserisci una nuova Task</label>
                 <input type="text" id="input-todo" v-model="inputValue" @keyup.enter="addTask">
+                <button @click="addTask">Aggiungi</button>
             </div>
             <ul class="container-todo">
-                <li v-for="todo in todos">
-                    <i class="far" :class="(todo.done == false) ? 'fa-square' : 'fa-check-square'"
-                        @click="todo.done = !todo.done"></i>
-                    <h2 :class="(todo.done == false ? '' : 'lined')">{{ todo.text }}</h2>
+                <li v-for="(todo, index) in todos">
+                    <div class="task">
+                        <i class="far" :class="(todo.done == false) ? 'fa-square' : 'fa-check-square'" @click="todo.done = !todo.done"></i>
+                        <h2 :class="(todo.done == false ? '' : 'lined')" @click="todo.done = !todo.done">{{ todo.text }}</h2>
+                    </div>
+                    <div class="delete" @click="removeItem(index)">
+                        <i class="far fa-times-circle"></i>
+                    </div>
                 </li>
             </ul>
         </div>
