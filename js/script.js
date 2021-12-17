@@ -38,9 +38,16 @@ const app = new Vue ({
                 text: 'Cucinare la cena',
                 done: false
             },
-        ]
+        ],
+        inputValue: null
     },
     methods: {
-
+        addTask: function () {
+            this.todos.unshift({
+                text: this.inputValue,
+                done: false
+            });
+            this.inputValue = null;
+        }
     }
 });
