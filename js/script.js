@@ -43,11 +43,13 @@ const app = new Vue ({
     },
     methods: {
         addTask: function () {
-            this.todos.unshift({
-                text: this.inputValue,
-                done: false
-            });
-            this.inputValue = null;
+            if(this.inputValue.lenght != 0) {
+                this.todos.unshift({
+                    text: this.inputValue,
+                    done: false
+                });
+                this.inputValue = null;
+            }
         },
         removeItem: function (index) {
             const element = this.todos[index];
