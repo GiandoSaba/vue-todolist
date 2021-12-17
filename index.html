@@ -24,7 +24,7 @@
                 <button @click="addTask">Aggiungi</button>
             </div>
             <ul class="container-todo">
-                <li v-for="(todo, index) in todos">
+                <li v-for="(todo, index) in todos" :class="(todo.done == false ? 'undone' : 'done')">
                     <div class="task">
                         <i class="far" :class="(todo.done == false) ? 'fa-square' : 'fa-check-square'" @click="todo.done = !todo.done"></i>
                         <h2 :class="(todo.done == false ? '' : 'lined')" @click="todo.done = !todo.done">{{ todo.text }}</h2>
